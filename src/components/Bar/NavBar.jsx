@@ -8,7 +8,11 @@ const NavBar = ({setToggleSidebar}) => {
   }
 
   return (
+<<<<<<< HEAD
     <div className=" bg-normal-gray flex w-full items-center justify-between p-2 md:p-4">
+=======
+    <div className=" bg-dark-blue flex w-full items-center justify-between p-2 md:p-4">
+>>>>>>> 931482173f2751a334a441de28d0668f0e0dcd24
       <div className="flex w-full items-center justify-between md:hidden">
         <HiMenu fontSize={40} className="ml-4 cursor-pointer"  onClick={handleClick}/>
       </div>
