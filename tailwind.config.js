@@ -8,14 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-<<<<<<< HEAD
         "dark-blue": "#001628",
         "light-gray": "#F9F9F9",
         "normal-gray": "#d9d9d9",
         "light-blue": "#e6f7ff",
-=======
-        "dark-blue": "#23395d"
->>>>>>> 931482173f2751a334a441de28d0668f0e0dcd24
+        // "dark-blue": "#23395d"
       },
       keyframes: {
         "slide-in": {

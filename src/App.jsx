@@ -9,11 +9,8 @@ import CryptoCurrenCiesPage from "./pages/CryptoCurrenCiesPage"
 import CryptoDetailsPage from "./pages/CryptoDetailsPage"
 import { useState } from "react"
 import NavBar from "./components/Bar/NavBar"
-<<<<<<< HEAD
 import Footer from "./components/Footer/Footer"
-=======
 
->>>>>>> 931482173f2751a334a441de28d0668f0e0dcd24
 const App = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false)
 
@@ -42,32 +39,28 @@ const App = () => {
 
       {/* PAGES */}
       <div className="w-full">
-<<<<<<< HEAD
-        <NavBar setToggleSidebar={setToggleSidebar} />
-        <div className="w-full flex-1 overflow-y-scroll p-4">
-=======
-        <NavBar setToggleSidebar={setToggleSidebar}/>
-        <div className="h-screen w-full flex-1 overflow-y-scroll p-4">
->>>>>>> 931482173f2751a334a441de28d0668f0e0dcd24
-          <Routes>
-            <Route exact path="/" element={<HomePage />} />
-            <Route exact path="/exchanges" element={<ExchangesPage />} />
-            <Route
-              exact
-              path="/cryptocurrencies"
-              element={<CryptoCurrenCiesPage />}
-            />
-            <Route
-              exact
-              path="/crypto/:coinId"
-              element={<CryptoDetailsPage />}
-            />
-          </Routes>
+        {/* <NavBar setToggleSidebar={setToggleSidebar} /> */}
+        <div className="w-full flex-1 overflow-y-scroll">
+          <NavBar setToggleSidebar={setToggleSidebar} />
+          <div className="w-full flex-1 overflow-y-scroll p-4">
+            <Routes>
+              <Route exact path="/" element={<HomePage />} />
+              <Route exact path="/exchanges" element={<ExchangesPage />} />
+              <Route
+                exact
+                path="/cryptocurrencies"
+                element={<CryptoCurrenCiesPage />}
+              />
+              <Route
+                exact
+                path="/crypto/:coinId"
+                element={<CryptoDetailsPage />}
+              />
+            </Routes>
+          </div>
+
+          <Footer />
         </div>
-<<<<<<< HEAD
-        <Footer />
-=======
->>>>>>> 931482173f2751a334a441de28d0668f0e0dcd24
       </div>
     </div>
   )
