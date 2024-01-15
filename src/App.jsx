@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div className="flex h-screen flex-col md:flex-row ">
-      <div className=" hidden h-screen md:flex md:justify-between">
+      <div className=" hidden h-screen md:flex">
         {/* DESKTOP VIEW */}
         <SideBar />
       </div>
@@ -24,12 +24,14 @@ const App = () => {
       <div className="flex-rol flex md:hidden">
         {toggleSidebar && (
           <div className="fixed z-10 h-screen w-4/5 animate-slide-in overflow-hidden">
-            <div className="bg-dark-blue flex w-full items-center justify-end">
-              <AiFillCloseCircle
-                fontSize={30}
-                className="mr-4 mt-4 cursor-pointer dark:text-slate-200"
-                onClick={() => setToggleSidebar(false)}
-              />
+            <div className="relative">
+              <div className="bg-dark-blue flex w-full items-center justify-end">
+                <AiFillCloseCircle
+                  fontSize={30}
+                  className="mr-4 mt-4 cursor-pointer dark:text-slate-200"
+                  onClick={() => setToggleSidebar(false)}
+                />
+              </div>
             </div>
 
             <SideBar setToggleSidebar={setToggleSidebar} />
@@ -38,29 +40,27 @@ const App = () => {
       </div>
 
       {/* PAGES */}
-      <div className="w-full">
-        {/* <NavBar setToggleSidebar={setToggleSidebar} /> */}
-        <div className="w-full flex-1 overflow-y-scroll">
-          <NavBar setToggleSidebar={setToggleSidebar} />
-          <div className="w-full flex-1 overflow-y-scroll p-4">
-            <Routes>
-              <Route exact path="/" element={<HomePage />} />
-              <Route exact path="/exchanges" element={<ExchangesPage />} />
-              <Route
-                exact
-                path="/cryptocurrencies"
-                element={<CryptoCurrenCiesPage />}
-              />
-              <Route
-                exact
-                path="/crypto/:coinId"
-                element={<CryptoDetailsPage />}
-              />
-            </Routes>
-          </div>
 
-          <Footer />
+      <div className="w-full flex-1 h-screen overflow-y-scroll">
+        <NavBar setToggleSidebar={setToggleSidebar} />
+        <div className="w-full p-4">
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/exchanges" element={<ExchangesPage />} />
+            <Route
+              exact
+              path="/cryptocurrencies"
+              element={<CryptoCurrenCiesPage />}
+            />
+            <Route
+              exact
+              path="/crypto/:coinId"
+              element={<CryptoDetailsPage />}
+            />
+          </Routes>
         </div>
+
+        <Footer />
       </div>
     </div>
   )
