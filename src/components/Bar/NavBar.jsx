@@ -1,5 +1,7 @@
+import Search from "../Search/Search"
 import ThemeController from "./ThemeController"
 import { HiMenu } from "react-icons/hi"
+
 
 const NavBar = ({ setToggleSidebar }) => {
   const handleClick = () => {
@@ -7,14 +9,18 @@ const NavBar = ({ setToggleSidebar }) => {
   }
 
   return (
-    <div className="flex w-full items-center justify-between">
-      <div className=" bg-dark-blue flex w-full items-center justify-between p-2 md:p-4">
-        <div className="flex w-full items-center justify-between md:hidden">
+    <div className="mt-2 flex w-full items-center justify-center px-2">
+      <div className=" flex w-full items-center justify-between rounded-lg border-2 border-slate-400 p-2 md:p-4 gap-4">
+        <div className="flex w-full items-center w-[100px] justify-between md:hidden">
           <HiMenu
             fontSize={40}
-            className="ml-4 cursor-pointer text-white"
+            className="ml-4 cursor-pointer text-slate-600"
             onClick={handleClick}
           />
+        </div>
+        <div className="w-full">
+
+          <Search />
         </div>
         <div className="w-full">
           <div className="flex items-center justify-end gap-5">
