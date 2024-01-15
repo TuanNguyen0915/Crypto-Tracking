@@ -8,11 +8,11 @@ import {
 import { useDispatch, useSelector } from "react-redux"
 import { RingSpinner } from "./Spinner/Spinner"
 import CryptoStats from "./Crypto/CryptoStats"
+import Top10Cryptos from "./Crypto/Top10Cryptos"
 
 const Home = () => {
   const dispatch = useDispatch()
-  const {loading} = useSelector(state=> state.cryptos)
-
+  const { currentCryptos, loading } = useSelector((state) => state.cryptos)
   useEffect(() => {
     try {
       dispatch(fetchCryptoStart())
@@ -30,17 +30,25 @@ const Home = () => {
     }
   }, [dispatch])
 
-  if(loading) {
+  if (loading) {
     return (
-      <div className="h-[79vh] w-full flex items-center justify-center">
+      <div className="flex h-[79vh] w-full items-center justify-center">
         <RingSpinner />
       </div>
     )
   }
 
   return (
-    <div className="p-2">
-      <CryptoStats />
+    <div className="w-full p-2">
+      <CryptoStats
+        globalStats={currentCryptos?.stats && currentCryptos?.stats}
+      />
+
+      <div className="mt-10">
+        <Top10Cryptos
+          allCryptos={currentCryptos?.coins && currentCryptos?.coins}
+        />
+      </div>
     </div>
   )
 }
