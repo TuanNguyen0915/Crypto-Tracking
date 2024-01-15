@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
-    <div className="w-full justify-end">
+    // <div className="absolute w-full bottom-0 left-0 right-0">
       <div className="bg-dark-blue pt-2 pb-4 flex w-full flex-col items-center justify-center gap-2 text-slate-200">
         <h1 className="text-xl">Crypto Tracking</h1>
         <h2>All rights reserved</h2>
@@ -27,7 +27,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-    </div>
+    // </div>
   )
 }
 

@@ -1,8 +1,7 @@
 import millify from "millify"
 import { Link } from "react-router-dom"
 
-const CryptoCard = ({ coin }) => {
-  console.log(coin)
+const CryptoCard = ({ coin}) => {
 
   return (
     <Link
