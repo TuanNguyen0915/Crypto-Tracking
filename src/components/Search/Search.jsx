@@ -1,13 +1,21 @@
-import { useState } from "react";
-import { CiSearch } from "react-icons/ci";
-const Search = () => {
-  const [searchTerm, setSearchTerm] = useState('')
-  console.log(searchTerm)
+
+import { CiSearch } from "react-icons/ci"
+import { useNavigate } from "react-router-dom"
+
+const Search = ({searchTerm, setSearchTerm}) => {
+  const navigate = useNavigate()
+  
   return (
-    <div className='border p-2 rounded-lg flex items-center gap-2'>
+    <div className="flex items-center gap-2 rounded-lg border p-2">
       <CiSearch />
-      <input type="text" className="w-full h-full outline-none" placeholder="Search" value={searchTerm}
-      onChange={(e)=>setSearchTerm(e.target.value)} />
+      <input
+        type="text"
+        className="h-full w-full outline-none bg-transparent"
+        placeholder="Search ..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        onFocus={()=> navigate('/search')}
+      />
     </div>
   )
 }
