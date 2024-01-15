@@ -4,7 +4,6 @@ const ThemeController = () => {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
-    console.log(isDark)
     document
       .querySelector("html")
       .setAttribute("data-theme", isDark ? "dark" : "light")

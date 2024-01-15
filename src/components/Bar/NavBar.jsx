@@ -12,7 +12,7 @@ const NavBar = ({ setToggleSidebar }) => {
         <div className="flex w-full items-center justify-between md:hidden">
           <HiMenu
             fontSize={40}
-            className="ml-4 cursor-pointer"
+            className="ml-4 cursor-pointer text-white"
             onClick={handleClick}
           />
         </div>
