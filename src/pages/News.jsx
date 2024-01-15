@@ -9,25 +9,24 @@ import { RingSpinner } from "../components/Spinner/Spinner"
 import { useEffect } from "react"
 
 const News = () => {
-  const dispatch = useDispatch()
   const { currentNews, loading } = useSelector((state) => state.news)
   console.log(currentNews)
-  console.log(loading)
+  // We dont use useEffect now to save the limited request
+  // const dispatch = useDispatch()
+  // useEffect(()=> {
+  //   dispatch(fetchNewsStart())
+  //   try {
+  //     const fetchData = async () => {
+  //       const res = await getNews()
+  //       dispatch(fetchNewSuccess(res))
+  //     }
+  //     fetchData()
+  //   } catch (error) {
+  //     dispatch(fetchNewFailure(error))
+  //   }
+  // }, [dispatch])
 
-  useEffect(()=> {
-    dispatch(fetchNewsStart())
-    try {
-      const fetchData = async () => {
-        const res = await getNews()
-        console.log(res)
-      }
-      fetchData()
-    } catch (error) {
-      dispatch(fetchNewFailure(error))
-    }
-  }, [dispatch])
-
-  if (!loading) {
+  if (loading) {
     return (
       <div className="w-full h-[600px]">
         <RingSpinner message="Wait a second, we loading news..." />
