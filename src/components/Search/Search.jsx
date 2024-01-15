@@ -14,7 +14,7 @@ const Search = ({searchTerm, setSearchTerm}) => {
         placeholder="Search ..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        onFocus={()=> navigate('/search')}
+        onFocus={()=> navigate('/search') }
       />
     </div>
   )

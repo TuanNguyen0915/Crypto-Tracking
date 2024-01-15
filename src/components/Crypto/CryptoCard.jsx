@@ -16,9 +16,9 @@ const CryptoCard = ({ coin}) => {
         <img src={coin.iconUrl} alt="" className="h-8 w-8 rounded-full" />
       </div>
       <div className="w-full flex flex-col gap-2 mt-2">
-        <p>Price: {millify(coin.price)}</p>
+        <p>Price: {coin.price > 10?millify(coin.price):coin.price}</p>
         <p>Market Cap: {millify(coin.marketCap)}</p>
-        <p>Daily Change: {millify(coin.change)}%</p>
+        <p>Daily Change: <span className={`${coin.change > 0?'text-green-600':"text-red-600"} font-semibold`}>{millify(coin.change)}%</span></p>
       </div>
     </Link>
   )
