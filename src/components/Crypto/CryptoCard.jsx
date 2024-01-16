@@ -21,11 +21,11 @@ const CryptoCard = ({ coin }) => {
         </div>
         <div className="flex w-full items-center justify-between">
           <p>Price: </p>
-          <p>{coin.price > 10 ? millify(coin.price) : coin.price.slice(0,10)}</p>
+          <p>$ {coin.price > 10 ? millify(coin.price) : coin.price.slice(0,10)}</p>
         </div>
         <div className="flex w-full items-center justify-between">
           <p>Market Cap: </p>
-          <p> {millify(coin.marketCap)}</p>
+          <p>$ {millify(coin.marketCap)}</p>
         </div>
         <div className="flex w-full items-center justify-between">
           <p>Daily Change:</p>
