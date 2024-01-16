@@ -37,5 +37,20 @@ const getCoin = async (coinId, timePeriod) => {
   return json
 }
 
+const getCoinPriceHistory = async (coinId, timePeriod) => {
+  const url = import.meta.env.VITE_COIN_BASE_URL
 
-export { getCryptosQuery, getNews, getCoin }
+  const res = await fetch(`${url}/${coinId}/history?timePeriod=${timePeriod}`, {
+    method: "GET",
+    headers: {
+      'X-RapidAPI-Key': import.meta.env.VITE_X_RAPID_API_KEY,
+      'X-RapidAPI-Host': import.meta.env.VITE_X_RAPID_API_HOST
+    }
+  }
+  )
+  const json = await res.json()
+  return json
+}
+
+
+export { getCryptosQuery, getNews, getCoin, getCoinPriceHistory }
