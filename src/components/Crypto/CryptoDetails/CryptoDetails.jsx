@@ -10,13 +10,12 @@ const CryptoDetails = ({ coin, coinHistory }) => {
 
   const newsFilter = currentNews?.filter((news) => {
     return (
-      news.title.toLowerCase().includes(coin?.name.toLowerCase()) ||
-      news.description.toLowerCase().includes(coin?.name.toLowerCase()) ||
-      news.content.toLowerCase().includes(coin?.name.toLowerCase())
+      news.title?.toLowerCase().includes(coin?.name.toLowerCase()) ||
+      news.description?.toLowerCase().includes(coin?.name.toLowerCase()) ||
+      news.content?.toLowerCase().includes(coin?.name.toLowerCase())
     )
   })
 
-  console.log(newsFilter.length)
 
   if (coin) {
     return (

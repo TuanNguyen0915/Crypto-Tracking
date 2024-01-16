@@ -10,7 +10,7 @@ const SideBar = ({ setToggleSidebar }) => {
   }
 
   return (
-    <div className="bg-dark-blue flex h-full min-w-[250px] flex-col gap-5 overflow-y-auto">
+    <div className="flex h-full min-w-[250px] flex-col gap-5 overflow-y-auto bg-dark-blue">
       <div className=" mt-5 flex w-full flex-col items-center justify-between px-4">
         <div className="flex w-full items-center justify-between gap-5 md:justify-end">
           <Link to="/" className="flex items-center gap-5">
@@ -37,18 +37,18 @@ const SideBar = ({ setToggleSidebar }) => {
             navClass.isActive ? isActiveStyle : isNotActiveStyle
           }
           onClick={handleCloseSideBar}
-          to="/exchanges"
+          to="/cryptocurrencies"
         >
-          Exchanges
+          Crypto Currencies
         </NavLink>
         <NavLink
           className={(navClass) =>
             navClass.isActive ? isActiveStyle : isNotActiveStyle
           }
           onClick={handleCloseSideBar}
-          to="/cryptocurrencies"
+          to="/exchanges"
         >
-          Crypto Currencies
+          Exchanges
         </NavLink>
         <NavLink
           className={(navClass) =>
