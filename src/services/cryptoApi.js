@@ -52,5 +52,33 @@ const getCoinPriceHistory = async (coinId, timePeriod) => {
   return json
 }
 
+// let config = {
+//   method: 'get',
+// maxBodyLength: Infinity,
+//   url: 'https://rest.coinapi.io/v1/exchanges',
+//   headers: { 
+//     'Accept': 'text/plain', 
+//     'X-CoinAPI-Key': '5B25601F-1F82-4057-98A2-92970AE1BE58'
+//   }
+// };
 
-export { getCryptosQuery, getNews, getCoin, getCoinPriceHistory }
+const getExchanges = async () => {
+  const url = 'https://coinpaprika1.p.rapidapi.com/exchanges';
+  // const options = {
+  // 	method: 'GET',
+  // 	headers: {
+  // 		'X-RapidAPI-Key': import.meta.env.VITE_X_RAPID_API_KEY,
+  // 		'X-RapidAPI-Host': 'coinpaprika1.p.rapidapi.com'
+  // 	}
+  const res = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': import.meta.env.VITE_X_RAPID_API_KEY,
+      'X-RapidAPI-Host': 'coinpaprika1.p.rapidapi.com'
+    }})
+    const json = await res.json()
+    return json
+}
+
+
+export { getCryptosQuery, getNews, getCoin, getCoinPriceHistory, getExchanges }
