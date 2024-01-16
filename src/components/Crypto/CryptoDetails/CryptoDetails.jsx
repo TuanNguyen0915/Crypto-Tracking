@@ -55,10 +55,10 @@ const CryptoDetails = ({ coin, coinHistory }) => {
         {/* NEWS */}
         <div className="w-full">
           <h1 className="textTitle my-5 text-3xl text-blue-500">Latest News</h1>
-          {newsFilter.length === 0 && (
+          {newsFilter?.length === 0 && (
             <RingSpinner message="We are updating news" />
           )}
-          {newsFilter.length > 0 && (
+          {newsFilter?.length > 0 && (
             <div>
               {newsFilter.map((news, idx) => (
                 <NewsCard key={idx} news={news} />
