@@ -22,10 +22,10 @@ const getNews = async () => {
   return json.results
 }
 
-const getCoin = async (coinId) => {
+const getCoin = async (coinId, timePeriod) => {
   const url = import.meta.env.VITE_COIN_BASE_URL
 
-  const res = await fetch(`${url}/${coinId}?timePeriod=7d`, {
+  const res = await fetch(`${url}/${coinId}?timePeriod=${timePeriod}`, {
     method: "GET",
     headers: {
       'X-RapidAPI-Key': import.meta.env.VITE_X_RAPID_API_KEY,
