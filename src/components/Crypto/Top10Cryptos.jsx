@@ -4,7 +4,7 @@ const Top10Cryptos = ({ allCryptos }) => {
   const top10coins = allCryptos?.slice(0, 10)
   return (
     <div className="w-full">
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between m-5">
         <p className="textTitle">Top 10 Cryptocurrencies</p>
       </div>
       {/* RENDER TOP 10 COINS */}

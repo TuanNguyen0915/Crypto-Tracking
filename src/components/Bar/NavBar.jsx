@@ -9,7 +9,7 @@ const NavBar = ({ setToggleSidebar, searchTerm, setSearchTerm }) => {
   }
 
   return (
-    <div className="mt-2 flex w-full items-center justify-center px-2">
+    <div className="mt-2 flex w-full items-center justify-center px-2 opacity-50 hover:opacity-100 transition-all duration-500 ease-in">
       <div className=" flex w-full items-center justify-between gap-4 rounded-lg border-2 border-slate-400 p-2 md:p-4">
         <div className="flex w-[100px] items-center justify-between md:hidden">
           <HiMenu

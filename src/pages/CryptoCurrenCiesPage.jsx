@@ -14,6 +14,7 @@ const CryptoCurrenCiesPage = () => {
   }
   return (
     <div>
+      <h1 className="textTitle text-blue-500 text-center text-3xl my-5">Top {coins.length} Cryptocurrencies </h1>
       {coins && (
         <div className="grid w-full grid-cols-2 gap-2 md:grid-cols-4 md:gap-4">
           {coins?.map((coin) => (
