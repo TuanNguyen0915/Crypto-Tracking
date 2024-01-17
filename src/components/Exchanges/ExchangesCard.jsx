@@ -35,7 +35,7 @@ const ExchangesCard = ({ exchange, selectSort }) => {
       </tr>
       <tr className="w-full">
         {isClick && (
-          <td className="w-full border-b p-4" colSpan={5}>
+          <td className="w-full border-b p-4" colSpan={4}>
             <div className="w-full">
               {links.length > 0 ? (
                 <div className="flex  w-full flex-col items-center justify-center gap-2">
