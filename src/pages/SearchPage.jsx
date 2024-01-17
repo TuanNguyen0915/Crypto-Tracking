@@ -33,7 +33,7 @@ const SearchPage = ({ searchTerm }) => {
           <RingSpinner message="How can I help ??? ..." />
         </div>
       )}
-      {searchTerm && cryptoFilter.length === 0 && (
+      {searchTerm && cryptoFilter?.length === 0 && (
         <div className="flex h-[600px] w-full items-center justify-center">
           <RingSpinner
             message="Sorry, we dont have data about"
@@ -45,13 +45,13 @@ const SearchPage = ({ searchTerm }) => {
       <div>
         {(cryptoFilter || newsFilter) && searchTerm && (
           <div>
-            {cryptoFilter.length > 0 && <h1 className="textTitle mb-4">Coins</h1>} 
+            {cryptoFilter?.length > 0 && <h1 className="textTitle mb-4">Coins</h1>} 
             <div className="grid w-full grid-cols-2 gap-2 md:grid-cols-4  md:gap-4">
               {cryptoFilter?.map((coin) => (
                 <CryptoCard coin={coin} key={coin.uuid} />
               ))}
             </div>
-            {newsFilter.length >0 && <h1 className="textTitle m-4">News</h1>}
+            {newsFilter?.length >0 && <h1 className="textTitle m-4">News</h1>}
             <div className="mt-5">
               {newsFilter?.map(news => (
                 <NewsCard news={news}  key={news.article_id}/>
