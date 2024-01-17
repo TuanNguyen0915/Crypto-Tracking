@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router"
 import { AiFillCloseCircle } from "react-icons/ai"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 
 //pages
 import SideBar from "./components/Bar/SideBar"
@@ -17,6 +17,11 @@ import News from "./pages/News"
 const App = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
+  const scrollRef = useRef()
+
+  useEffect(()=> {
+   scrollRef.current.scrollTo(0,0) 
+  })
 
   return (
     <div className="flex h-screen flex-col md:flex-row ">
@@ -45,7 +50,7 @@ const App = () => {
 
       {/* PAGES */}
 
-      <div className="h-screen w-full flex-1 overflow-y-scroll">
+      <div ref={scrollRef} className="h-screen w-full flex-1 overflow-y-scroll">
         <NavBar
           setToggleSidebar={setToggleSidebar}
           setSearchTerm={setSearchTerm}
