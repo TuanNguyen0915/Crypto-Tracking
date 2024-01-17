@@ -19,12 +19,12 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const scrollRef = useRef()
 
-  useEffect(()=> {
-   scrollRef.current.scrollTo(0,0) 
+  useEffect(() => {
+    scrollRef.current.scrollTo(0, 0)
   })
 
   return (
-    <div className="flex h-screen flex-col md:flex-row ">
+    <div className="flex flex-col md:flex-row ">
       <div className=" hidden h-screen md:flex">
         {/* DESKTOP VIEW */}
         <SideBar />
@@ -50,7 +50,7 @@ const App = () => {
 
       {/* PAGES */}
 
-      <div ref={scrollRef} className="h-screen w-full flex-1 overflow-y-scroll">
+      <div className="h-screen w-full flex-1 overflow-y-scroll" ref={scrollRef}>
         <NavBar
           setToggleSidebar={setToggleSidebar}
           setSearchTerm={setSearchTerm}
