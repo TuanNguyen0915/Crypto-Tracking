@@ -12,7 +12,7 @@ const ExchangesCard = ({ exchange, selectSort }) => {
 
   return (
     <>
-      <tr className="hover">
+      <tr className="hover w-full">
         <td
           onClick={() => setIsClick(!isClick)}
           className="flex w-full items-center"
@@ -30,7 +30,7 @@ const ExchangesCard = ({ exchange, selectSort }) => {
         {selectSort === "30d" && (
           <td>{millify(exchange.quotes.USD.reported_volume_30d)}</td>
         )}
-        <td>{millify(exchange.currencies)}</td>
+        <td className="hidden md:flex">{millify(exchange.currencies)}</td>
         <td className="hidden md:flex">{millify(exchange.confidence_score)}</td>
       </tr>
       <tr className="w-full">

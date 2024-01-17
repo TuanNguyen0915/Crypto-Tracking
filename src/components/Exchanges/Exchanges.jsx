@@ -30,13 +30,12 @@ const Exchanges = ({ exchanges }) => {
   }, [selectSort])
 
   if (sortedRank.length > 0) {
-    console.log(sortedRank[0])
     return (
-      <table className="table w-full">
+      <table className="table p-0 m-0 w-full">
         {/* head */}
-        <thead className="bg-slate-100 font-semibold">
+        <thead className="bg-slate-100 font-semibold w-full p-0 m-0">
           <tr>
-            <th></th>
+            <th className="w-1/2"></th>
             <th>
               <select
                 defaultValue="24h"
@@ -48,12 +47,12 @@ const Exchanges = ({ exchanges }) => {
                 <option value="30d">1m Trade Volume</option>
               </select>
             </th>
-            <th>Currencies</th>
+            <th className="hidden md:flex">Currencies</th>
             <th className="hidden md:flex">Confidence Score</th>
           </tr>
         </thead>
         {/* body */}
-        <tbody>
+        <tbody className="w-full">
           {sortedRank.map((exchange) => (
           <ExchangesCard key={exchange.id} exchange={exchange && exchange} selectSort={selectSort}/>
         ))}
